@@ -1,5 +1,4 @@
-const User = require('../models/User')
-const config = require('../config/global')
+const User = require('../models/User') 
 
 exports.crearUsuario = async  (req, res) => {
     try{
@@ -24,10 +23,44 @@ exports.crearUsuario = async  (req, res) => {
         })
     
     }catch(error){
-        return res.status(400).json({
+        return res.status(500).json({
             status:"error",
-            mensaje:"No se ha podido crear al usuario" 
+            mensaje:"Ha ocurrido un problema en crear usuario" 
         })
     }
 
+}
+
+exports.loginUser=async(req,res)=>{
+
+    try{
+        const {email, password } = req.body 
+        const user=await User.findOne({email:email})
+        if(!user)    {
+            return res.status(404).json({
+                status:"error",
+                mensaje:"El usuario no existe" 
+            })
+        }
+       
+        const validPassword=await user.validatePassword(password)
+        if(!validPassword) {
+            return res.status(404).json({
+                status:"error",
+                mensaje:"No se encuentra al usuario" 
+            })
+        }
+         
+        return res.status(404).json({
+            status:"exito",
+            mensaje:"Usuario encontrado",
+            user 
+        })
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({
+            status:"error",
+            mensaje:"Ha ocurrido un problema en el login" 
+        })
+    }
 }
