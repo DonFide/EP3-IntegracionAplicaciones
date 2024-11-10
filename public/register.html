@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    
+    <main class="register-container">
+        <section class="register-right-side">
+            <header class="right-header">
+                <div>
+                <p><strong>¡Hola! </strong></p>
+                <p><strong>¿Nuevo por aquí? </strong></p>
+                </div>
+                <p style="font-size: 20px;">Aquí puedes registrar una nueva cuenta :)</p>
+            </header>
+            <div class="right-body">
+                <p>¿Ya tienes una cuenta? <a href="login.html" class="register-link">Inicia sesión aquí</a></p>
+            </div>
+        </section>
+
+        <section class="register-left-side">
+            <header class="register-left-header">
+                <p><strong>Registrarse</strong></p>
+            </header>
+
+                <form id="form-registro" action="" class="form-body">
+                    <div class="input-container">
+                        <input type="text" name="" id="name" class="form-input" placeholder="Nombres">
+                        <input type="text" name="" id="lastName" class="form-input" placeholder="Apellidos">
+                        <input type="email" name="" id="email" class="form-input" placeholder="Email">
+                        <input type="password" name="" id="password" class="form-input" placeholder="Contraseña">
+                    </div>
+                    <div id="error-mensaje"></div>
+                    <button type="submit" class="register-form-submit">
+                        Registrarse
+                    </button>
+                </form>
+        </section>
+    </main>
+
+    <div id="alert-container" class="alert-container">
+        <p id="alert-mensaje"></p>
+        <div class="boton-cerrar">
+            <button id="cerrar-alert" class="cerrar-alert"><a href="#">Cerrar</a></button>
+        </div>
+    </div>
+
+    <script src="/script/validacionRegistro.js"></script> 
+</body>
+</html>

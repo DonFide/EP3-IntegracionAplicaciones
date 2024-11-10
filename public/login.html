@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    
+    <main class="login-container">
+        <section class="login-left-side">
+            <header class="left-header">
+                <p><strong>Iniciar Sesión</strong></p>
+            </header>
+
+            <form id="form-login" action="" class="form-body">
+                <div class="input-container">
+                    <input type="email" id="email" class="form-input" placeholder="Email">
+                    <input type="password" id="password" class="form-input" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="form-submit">Ingresar</button>
+            </form>
+
+        </section>
+
+        <section class="login-right-side">
+            <header class="right-header">
+                <p><strong>Bienvenido</strong></p>
+                <p style="font-size: 20px;">Aquí podrás iniciar sesión para acceder a tu cuenta :)</p>
+            </header>
+            <div class="right-body">
+                <p>¿No tienes cuenta? <a href="register.html" class="register-link">Regístrate aquí</a></p>
+            </div>
+        </section>
+    </main>
+
+    <div id="alert-container" class="alert-container">
+        <div class="alerts">
+            <p id="alert-mensaje"></p>
+        </div>
+        
+        <div class="boton-cerrar">
+            <button id="cerrar-alert" class="cerrar-alert"><a href="#">Cerrar</a></button>
+        </div>
+    </div>
+ 
+    <script src="../script/validacionLogin.js"></script>
+</body>
+</html>
